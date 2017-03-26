@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Food Menu</title>
+
+  <!-- Call jquery.js script file -->
+<script src="jquery-3.1.1.min.js"></script>
+<link rel="stylesheet" href="css/style.css"/>
+  <!-- declare location of bootstrap stylesheet -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<!-- execute ajax function when document ready -->
+<script>
+ $(document).ready(function() {
+ $.ajax({
+  type: 'GET',
+  url: 'car_list.xml',
+  dataType: 'xml',
+  success: function(xml) {
+  
+  //make a table function with call in function from xml file with css style using style.css through "menus" id
+   $(xml).find('car').each(function() {
+     $("#menus").append(
+     "<table>" +
+        "<tr>" + 
+            "<td>" + "<img src='" + $(this).find("image").text() + "' class='img_food' alt='" + "'height=200px width=250px border=1px'" + "'>" + "</td>" +
+            "<td>" + "<span>" + $(this).find("model").text() + ", " + $(this).find("type").text() + "</span><br /><br/> " +
+            "<span>Transmission : " + $(this).find("trans").text() + "</span><br /> " +
+           "<span>" + $(this).find("price").text() + "</span><br />" +
+           "<span>Monthly Payment: " + $(this).find("monthly").text() + "</span><br /> " +
+           "</td>" +
+        "</tr>" +
+        //buy button
+     "<button>Buy</button></table><hr/>"
+
+    );
+   });
+  }
+ });
+});
+
+</script>
+
+<body class="body">
+<div><h2 class="header">Carsaleeee</h2></div>
+<div id="menus"><hr/></div>
+</body>
+</html> 
+
+

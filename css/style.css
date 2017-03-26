@@ -1,0 +1,56 @@
+#menus{
+            font:13px Arial; 
+            width:800px;
+            text-align:left;
+            margin-left: 90px;
+            overflow:hidden;
+        }
+#menus div  {
+            width:auto;
+            text-align:center;
+            padding-left:100%;
+            margin-left: 100px;
+            letter-spacing:1px;
+            
+        }
+#menus table  {
+            padding-right: 10%;
+            
+        }
+#menus span  {
+            font-family: Georgia;
+            font-size: 15px;
+            color: darkblue ;
+            width: 100px;            
+        }
+#menus td  {
+            
+            padding-left:50px;
+            
+        }
+#menus button {
+            
+        background-color: #4CAF50; /* Green */
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        margin-top: auto;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        margin-top: 120px;
+        float: right;
+            
+        }
+.header {
+    font-family:  monospace;
+    font-size: 60px;
+    text-align: center;
+
+}
+.body{
+    align-content: center
+}
+      
